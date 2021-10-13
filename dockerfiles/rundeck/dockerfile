@@ -1,0 +1,30 @@
+FROM ubuntu:20.04
+
+ARG USERNAME=admin
+ARG PASSWORD=admin
+
+
+RUN apt-get update && apt-get install -y openssh-server curl
+RUN apt install sudo
+RUN mkdir /var/run/sshd
+
+RUN adduser --gecos "" --disabled-password ${USERNAME}
+RUN echo "${USERNAME}:${PASSWORD}" | chpasswd
+RUN usermod -aG sudo ${USERNAME}
+
+# Rundeck Instalation
+RUN apt-get install -y openjdk-8-jdk-headless
+RUN apt-get install -y uuid-runtime
+RUN mkdir -p /home/rundeck/projects
+RUN wget --content-disposition https://packagecloud.io/pagerduty/rundeck/packages/any/any/rundeck_3.4.4.20210920-1_all.deb/download.deb
+RUN dpkg -i rundeck_3.4.4.20210920-1_all.deb
+RUN rm rundeck_3.4.4.20210920-1_all.deb
+
+# RUN /etc/init.d/rundeckd start
+
+
+EXPOSE 22
+EXPOSE 4440 4443
+
+CMD service rundeckd start && tail -F /var/log/rundeck/service.log
+# CMD ["/etc/init.d/rundeckd", "start"]

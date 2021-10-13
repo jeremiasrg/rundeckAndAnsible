@@ -1,0 +1,5 @@
+<project>
+    <node name="dev01" type="Node" hostname="dev01" username="admin" />
+    <node name="dev02" type="Node" hostname="dev02" username="admin" />
+    <node name="dev03" type="Node" hostname="dev03" username="admin" />
+</project>
