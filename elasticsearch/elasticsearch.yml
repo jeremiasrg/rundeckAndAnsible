@@ -1,0 +1,13 @@
+# jeremy 2
+cluster.name: "docker-cluster"
+network.host: 0.0.0.0
+## License
+xpack.license.self_generated.type: basic
+
+# Security
+xpack.security.enabled: true
+xpack.security.authc:
+  anonymous:
+    username: anonymous
+    roles: rollup_user
+    authz_exception: true
