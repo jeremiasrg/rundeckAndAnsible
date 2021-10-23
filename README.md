@@ -25,32 +25,34 @@ This approach was created to avoid lost time. You can change all the configurati
 
 Find below the list of shared files in this project:
 
-**Ansible**
-
 ---
+
+**Ansible**
 
 - ./ansible-config/ansible.cfg
 - ./ansible-config/hosts
 
-**Elasticsearch**
-
 ---
+
+**Elasticsearch**
 
 - ./elasticsearch/elasticsearch.yml
 
-**Kibana**
-
 ---
+
+**Kibana**
 
 - ./kibana/kibana.yml
 
-**Rundeck**
-
 ---
+
+**Rundeck**
 
 - ./rundeck-config/framework.properties
 - ./rundeck-config/project.properties
 - ./rundeck-config/rundeck-config.properties
+
+---
 
 ### Access
 
