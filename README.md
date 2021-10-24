@@ -29,8 +29,9 @@ Find below the list of shared files in this project:
 
 **Ansible**
 
-- ./ansible-config/ansible.cfg
-- ./ansible-config/hosts
+- ./ansible/ansible-config/ansible.cfg
+- ./ansible/ansible-config/hosts
+- ./ansible/playbooks/**
 
 ---
 
@@ -82,8 +83,9 @@ services:
       - "./rundeck-config/framework.properties:/etc/rundeck/framework.properties:ro"
       - "./rundeck-config/project.properties:/etc/rundeck/project.properties:ro"
       - "./rundeck-config/rundeck-config.properties:/etc/rundeck/rundeck-config.properties:ro"
-      - "./ansible-config/ansible.cfg:/etc/ansible/ansible.cfg:ro"
-      - "./ansible-config/hosts:/etc/ansible/hosts:ro"
+      - "./ansible/ansible-config/ansible.cfg:/etc/ansible/ansible.cfg:ro"
+      - "./ansible/ansible-config/hosts:/etc/ansible/hosts:ro"
+      - "./ansible/playbooks:/home/ansible/playbooks:ro"
     ports:
       - 4440:4440
     networks:
@@ -96,7 +98,7 @@ services:
       - 9200:9200
       - 9300:9300
     volumes:
-      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml:ro
     environment:
       discovery.type: single-node
       ELASTIC_USERNAME: elastic
