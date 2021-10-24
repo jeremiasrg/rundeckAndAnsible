@@ -82,7 +82,6 @@ services:
       - "./rundeck-config/framework.properties:/etc/rundeck/framework.properties:ro"
       - "./rundeck-config/project.properties:/etc/rundeck/project.properties:ro"
       - "./rundeck-config/rundeck-config.properties:/etc/rundeck/rundeck-config.properties:ro"
-      - "./rundeck-config/resources.xml:/resources.xml:ro"
       - "./ansible-config/ansible.cfg:/etc/ansible/ansible.cfg:ro"
       - "./ansible-config/hosts:/etc/ansible/hosts:ro"
     ports:
