@@ -9,5 +9,5 @@ xpack.security.enabled: true
 xpack.security.authc:
   anonymous:
     username: anonymous
-    roles: rollup_user
+    roles: []
     authz_exception: true
