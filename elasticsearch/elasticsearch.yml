@@ -9,5 +9,5 @@ xpack.security.enabled: true
 xpack.security.authc:
   anonymous:
     username: anonymous
-    roles: []
+    roles: [role1, role2]
     authz_exception: true

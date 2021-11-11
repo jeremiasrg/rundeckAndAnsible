@@ -29,4 +29,4 @@ RUN usermod -aG sudo ${USERNAME}
 EXPOSE 22
 EXPOSE 4440 4443
 
-CMD /etc/init.d/rundeckd start && tail -f /dev/null && /bin/bash
+CMD /etc/init.d/rundeckd start && sleep infinity
